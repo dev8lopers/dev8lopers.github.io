@@ -263,10 +263,10 @@
                         <p class="text">
                             We are a dedicated team of industry experts, driven by the passion to forge our own path and deliver exceptional results as we navigate the frontier of our chosen field.</p>
                     </div> <!-- section title -->
-                    <div class="pt-4">
+                    <!-- <div class="pt-4">
                         <p class="text">"Sure would be nice if we had a testomonial about how great we are."</p>
                         <h4 class="sub-title pt-2">- Person who testified.</h4>
-                    </div> <!-- section title -->
+                    </div> section title -->
                 </div>
             </div> <!-- row -->
             <div class="row">
@@ -290,57 +290,31 @@
                     <div class="section-title text-center pb-0">
                         <h4 class="title">Get In touch</h4>
                         <p class="text">Have any questions or want to get in touch? Drop us a message!</p>
+                        <div class="flex items-center">
+                            <a href="mailto:hliao@dev8lopers.com" class="text-blue-500 underline mr-1" id="email">hliao@dev8lopers.com</a>
+                            <button onclick="copyToClipboard('email')" class="bg-blue-500 hover:bg-blue-700 font-bold py-1 px-1 rounded">
+                                Copy
+                            </button>
+                        </div>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form">
-                        <form id="contact-form" action="assets/contact.php" method="post" data-toggle="validator">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="text" name="name" placeholder="Your Name" data-error="Name is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="email" name="email" placeholder="Your Email" data-error="Valid email is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="text" name="subject" placeholder="Subject" data-error="Subject is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="text" name="phone" placeholder="Phone" data-error="Phone is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="single-form form-group">
-                                        <textarea placeholder="Your Mesaage" name="message" data-error="Please, leave us a message." required="required"></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <p class="form-message"></p>
-                                <div class="col-md-12">
-                                    <div class="single-form form-group text-center">
-                                        <button type="submit" class="main-btn">send message</button>
-                                    </div> <!-- single form -->
-                                </div>
-                            </div> <!-- row -->
-                        </form>
-                    </div> <!-- row -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- conteiner -->
+        </div> <!-- container -->
     </section>
+    
+    <script>
+        function copyToClipboard(elementId) {
+            var emailElement = document.getElementById(elementId);
+            var range = document.createRange();
+            range.selectNode(emailElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            alert("Email copied to clipboard: " + emailElement.innerText);
+        }
+    </script>
+    
 
     <!--====== CONTACT PART ENDS ======-->
 
